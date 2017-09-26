@@ -67,6 +67,24 @@ define(['jquery'],function($){
                     $('body').animate({scrollTop:offsetTop},400)
                 }
             })
+        },
+        // ajax请求
+        ajaxJson:function(selector,url){
+            $.ajax({
+                type:'get',
+                dataType:'json',
+                url:url,
+                success:function(msg){
+                    html = $.map(msg,function(item){
+                        return `<li><a href="">
+                            <img src="${item.imgurl}">
+                            <p class="p1">${item.title}</p>
+                            <p class="p2">${item.detail}</p>
+                            </a></li>`
+                    }).join('');
+                    $(selector).html(html);
+                }
+            })
         }
     }
 })

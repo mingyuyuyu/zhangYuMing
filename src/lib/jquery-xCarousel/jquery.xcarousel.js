@@ -156,7 +156,7 @@
 						$ul.animate(params);
 					}else if(opt.type === 'horizontal'){
 						params.left = -opt.index*opt.width;
-						$ul.animate(params);
+						$ul.stop().animate(params);
 					}
 
 					// 淡入淡出
