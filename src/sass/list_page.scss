@@ -321,6 +321,118 @@
                 }
             }
         }
-        
+        .goodslist{margin-top:35px;
+            .sort{background:#F3F3F3;height:24px;padding:6px;color:#333;
+                .sort_left{
+                    h3{float:left;color:#333;font-weight:normal;padding:0 8px;font-size:12px;line-height:20px;}
+                    ul{
+                        li{float:left;padding:3px 8px;;background:white;margin-right:5px;padding-left:12px;cursor:pointer;
+                            &.active{background:#ee5533;}
+                            a{color:#333;font-size:12px;}
+                            i{display:block;width:11px;height:14px;background:url("../img/list_icon.png") no-repeat -31px -6px;float:right;margin-left:2px;margin-top:2px;
+                                &.updown{width:12px;height:14px;background-position:-10px -6px;}
+                            }
+                        }
+                    }
+                    input{margin-left:20px;margin-top:7px;}
+                }
+                
+               .sort_right{
+                    div{float:left;
+                        &.totalgoods{
+                            color:#aaa;padding:5px 15px 0 7px;
+                        }
+                        &.pageschoose{
+                            span{
+                                &:nth-child(1){color:#ee5533;}
+                            }
+                            color:#333;padding:5px 10px 0 3px;
+                        }
+                        &.choose_page{
+                            a{display:inline-block;width:24px;height:24px;background:white;color:#ccc;border:1px solid #e6e6e6;margin-left:5px;text-align:center;line-height:24px;cursor:pointer;font-weight:bold;
+                                &.btn_left{color:#ccc}
+                                &.btn_right{color:#333}
+                            }
+                        }
+                    }
+               } 
+            }
+
+        }
+        .sale_goods{
+            ul{ 
+                li{
+                    float:left;width:224px;margin:15px 27px 15px 0;border:3px solid #fff;box-sizing:border-box;padding:10px 0 3px 4px;
+                    transition:border-color 0.5s;
+                    &:hover{border:3px solid #ee5533;}
+                    &:nth-child(4n){margin-right:0;}
+                    .price{font-size:16px;color:#ee5533;font-weight:bold;
+                        .yunfei{border: 1px solid #EE5533;color: #EE5533;padding:1px;font-size:12px;font-weight:normal;margin-left:6px;}
+                    }
+                    .title{height:40px;line-height:20px;margin-top:10px;
+                        a{
+                            color:#333;
+                            &:hover{color:#ee5533;}
+                        }
+                    }
+                    .huodong{height:22px;line-height:22px;color:#ee5533;padding-bottom:10px;}
+                    .saleqty{
+                        color:#999;
+                    }
+                    .pingjia{
+                        &:hover span{text-decoration:underline;}
+                        color:#333;margin-left:20px;
+                        span{color:#ee5533;}
+                    }
+                    .goods_bottom{margin-top:13px;
+                        a{display:block;height:30px;line-height:30px;text-align:center;background:#f3f3f3;float:left;color:#333;padding:0 19px;
+                            &.add_car{border-right:1px solid #ddd;border-top:1px solid #ddd;
+                                &:hover{background:#ee5533;
+                                    span{color:#fff;}
+                                    i{background-position:-75px -6px;}
+                                }
+                            }
+                            &.shoucang {border-top:1px solid #ddd;
+                                &:hover{background:#ee5533;
+                                    span{color:#fff;}
+                                    i{background-position:-180px -7px; }
+                                }
+                               i{background-position:-204px -7px;}
+                                }
+                        i{display:inline-block;width:18px;height:16px;background:url("../img/list_icon.png") no-repeat -50px -6px;vertical-align:middle;margin-right:5px;}
+                        }
+                    }
+                }
+            }
+            .pageLoading{float:right;overflow:hidden;margin-top:30px;
+                .gofirst{
+                    float:left;
+                    span{
+                        display:block;height:36px;width:36px;float:left;text-align:center;line-height:36px;border:1px solid #ccc;color:#333;margin-right:5px;font-size:14px;cursor:pointer;
+                        &.previous{width:80px;}
+                    }
+                }
+                .page{overflow:hidden;float:left;
+                    .load{display:block;height:36px;width:36px;float:left;text-align:center;line-height:36px;border:1px solid #ccc;color:#333;margin-right:5px;font-size:14px;cursor:pointer;
+                        &:hover{border:1px solid #ee5533;}
+                        &.sure{background:#ee5533;}
+                    }
+                }
+                .loading{
+                    float:left;height:36px;
+                    span{
+                        float:left;color:#333;line-height:36px;text-align:center;margin-right:5px;font-size:14px;
+                        &.nextpage{width:80px;border:1px solid #ccc;cursor:pointer;}
+                        &.lastpage{width:40px;border:1px solid #ccc;cursor:pointer;}
+                        &.totalpage1{margin-left:40px;margin-right:20px;
+                            em{font-style:normal;}
+                        }
+                        .writepage{width:36px;border:1px solid #ccc;height:36px;margin:0 10px 0 10px;outline:none;padding:0;}
+                        &.btn{width:45px;height:36px;border:1px solid #ccc;cursor:pointer;}
+                    }
+
+                }
+            }
+        }
     }
 }
