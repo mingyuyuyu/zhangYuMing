@@ -31,5 +31,5 @@ require(['jquery','list_h'],function($,ih){
     // ajax请求数据
     ih.requireGoods();
 
-    
+
 })

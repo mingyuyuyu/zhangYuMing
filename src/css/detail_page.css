@@ -1,0 +1,177 @@
+.header .toolbar { width: 100%; border-bottom: 1px solid #ddd; height: 36px; background-color: white; }
+
+.header .toolbar .left .shoucang { padding-right: 15px; font-size: 14px; color: #666; }
+
+.header .toolbar .left .shoucang em { display: inline-block; vertical-align: middle; width: 14px; height: 14px; background: url("../img/toolbar.png") no-repeat 0 0; margin-right: 4px; line-height: 36px; }
+
+.header .toolbar .left .shoucang:hover { color: #FF6655; }
+
+.header .toolbar .left .market { padding: 0 10px; color: #FF6655; font-weight: bold; position: relative; display: inline-block; height: 36px; line-height: 36px; font-size: 14px; }
+
+.header .toolbar .left .market em, .header .toolbar .left .market i { display: inline-block; vertical-align: middle; width: 9px; height: 15px; background: url("../img/toolbar.png") no-repeat -31px 0; margin-right: 4px; }
+
+.header .toolbar .left .market i { width: 7px; height: 4px; background-position: 0 -61px; margin-left: 15px; }
+
+.header .toolbar .left .market .region { width: 450px; border: 1px solid #ccc; position: absolute; top: 36px; left: -1px; line-height: 32px; background: white; display: none; z-index: 99; }
+
+.header .toolbar .left .market .region.none { display: block; }
+
+.header .toolbar .left .market .region .check { font-weight: normal; padding-top: 10px; border-bottom: 1px solid #ddd; }
+
+.header .toolbar .left .market .region .check:nth-child(4) { border-bottom: 0 none; }
+
+.header .toolbar .left .market .region .check dt { float: left; color: #bbb; padding-left: 15px; }
+
+.header .toolbar .left .market .region .check dd { float: left; margin-right: 30px; padding-bottom: 5px; }
+
+.header .toolbar .left .market .region .check dd a { padding: 0 5px; color: #666; }
+
+.header .toolbar .left .market .region .check dd a:hover { color: #FF6655; }
+
+.header .toolbar .left .market .region .check dd a.shanghai { background: #FF6655; color: white; font-weight: bold; }
+
+.header .toolbar .left .market .region .check dd.six { padding-left: 85px; }
+
+.header .toolbar .right ul .tr { float: left; padding: 0 10px; margin: 10px 0; line-height: 16px; border-right: 1px solid #ddd; position: relative; }
+
+.header .toolbar .right ul .tr.home { border-right: 1px solid #fff; }
+
+.header .toolbar .right ul .tr.home img { float: left; padding-right: 10px; padding-top: 2px; }
+
+.header .toolbar .right ul .tr.show { height: 36px; margin: 0 0 0 -1px; border: 1px solid #ddd; line-height: 36px; border-bottom: 1px solid #fff; z-index: 99; margin-top: -1px; }
+
+.header .toolbar .right ul .tr .tel_show { position: absolute; top: 37px; right: -1px; width: 220px; border: 1px solid #ccc; background: #fff; border-top: 1px solid #fff; display: none; padding-right: 20px; padding-bottom: 10px; }
+
+.header .toolbar .right ul .tr .tel_show img { margin-left: 10px; float: left; padding-right: 10px; }
+
+.header .toolbar .right ul .tr .tel_show p { font-size: 14px; color: #333; }
+
+.header .toolbar .right ul .tr .tel_show .p2 { color: #FF6655; line-height: 18px; font-size: 14px; margin-top: -6px; }
+
+.header .toolbar .right ul .tr .tel_show a { display: block; height: 30px; width: 100px; float: left; border-radius: 5px; margin-top: 1px; background: url("./img/foot.png"); }
+
+.header .toolbar .right ul .tr .tel_show a.ip { background-position: -280px -62px; }
+
+.header .toolbar .right ul .tr .tel_show a.ad { background-position: -393px -62px; }
+
+.header .toolbar .right ul .tr .tel_show a.ip:hover { background-position: -280px -97px; }
+
+.header .toolbar .right ul .tr .tel_show a.ad:hover { background-position: -393px -97px; }
+
+.header .toolbar .right ul .tr .gz_show { position: absolute; top: 37px; right: -1px; width: 201px; border: 1px solid #ccc; background: #fff; border-top: 1px solid #fff; display: none; }
+
+.header .toolbar .right ul .tr .gz_show div { width: 90px; float: left; padding-left: 10px; }
+
+.header .toolbar .right ul .tr .gz_show div p { line-height: 22px; }
+
+.header .toolbar .right ul .tr .gz_show div.gz1 { border-right: 1px dashed #ddd; }
+
+.header .toolbar .right ul .tr .gz_show div.gz1 .boqii { color: #FF6655; font-size: 14px; }
+
+.header .toolbar .right ul .tr .gz_show div.gz2 a { display: block; line-height: 22px; padding-bottom: 10px; color: #FF6655; }
+
+.header .toolbar .right ul .tr .gz_show div.gz2 a:hover { text-decoration: underline; }
+
+.header .toolbar .right ul .tr .gz_show div.gz2 a i { display: inline-block; height: 14px; width: 16px; vertical-align: middle; background: url("../css/img/foot.png") no-repeat -283px -128px; margin-left: 5px; }
+
+.header .toolbar .right ul .tr .home_show { position: absolute; top: 37px; right: -1px; width: 101px; border: 1px solid #ccc; background: #fff; border-top: 1px solid #fff; display: none; }
+
+.header .toolbar .right ul .tr .home_show ul li { margin: 0; line-height: 25px; border-bottom: 1px dashed #ddd; }
+
+.header .toolbar .right ul .tr .home_show ul li:nth-child(1) i { background-position: -20px -45px; }
+
+.header .toolbar .right ul .tr .home_show ul li:nth-child(2) i { background-position: -40px -45px; }
+
+.header .toolbar .right ul .tr .home_show ul li:nth-child(3) { border-bottom: 0 none; }
+
+.header .toolbar .right ul .tr .home_show ul li:nth-child(3) i { background-position: -60px -45px; }
+
+.header .toolbar .right ul .tr .home_show ul li i { display: inline-block; width: 20px; height: 14px; vertical-align: middle; background: url("../img/toolbar.png") no-repeat; margin-left: 10px; }
+
+.header .toolbar .right ul .tr .home_show ul li a { padding-left: 8px; }
+
+.header .toolbar .right ul .tr a { color: #333; font-size: 14px; }
+
+.header .toolbar .right ul .tr a:hover { color: #FF6655; text-decoration: underline; }
+
+.header .header1 { width: 100%; padding: 12px 0; }
+
+.header .header1 .container { position: relative; }
+
+.header .header1 .app { margin-top: 10px; }
+
+.header .header1 .search { float: left; padding-top: 35px; padding-left: 75px; }
+
+.header .header1 .search input { width: 500px; height: 32px; border: 2px solid #FF6655; outline: none; float: left; padding-left: 10px; font-size: 16px; }
+
+.header .header1 .search ::-webkit-input-placeholder { /* WebKit browsers */ color: #999; }
+
+.header .header1 .search button { height: 38px; background: #FF6655; width: 90px; border: 2px solid #FF6655; float: left; color: white; font-size: 20px; outline: none; cursor: pointer; }
+
+.header .header1 .h_search { position: absolute; left: 315px; top: 77px; font-size: 12px; color: #999999; }
+
+.header .header1 .h_search a { margin: 0 3px; color: #999999; font-size: 12px; }
+
+.header .header1 .h_search a:hover { color: #FF6655; text-decoration: underline; }
+
+.header .header1 .adv2 { padding-top: 30px; }
+
+.main { width: 100%; }
+
+.main .buy .buy_left { width: 400px; float: left; }
+
+.main .buy .buy_left .showgoods { width: 360px; height: 420px; padding: 19px; border: 1px solid #e6e6e6; }
+
+.main .buy .buy_left .showgoods .img_min { padding: 15px 30px 0 30px; }
+
+.main .buy .buy_left .showgoods .img_min img { float: left; margin-right: 9px; border: 1px solid #f3f3f3; }
+
+.main .buy .buy_left .showgoods .img_min img:last-child { margin-right: 0px; }
+
+.main .buy .buy_left .showgoods .img_min img.active { border: 1px solid #e53; }
+
+.main .buy .buy_left .share { padding: 15px 0 0 112px; width: 400px; box-sizing: border-box; }
+
+.main .buy .buy_left .share dl dt { float: left; color: #666; margin-top: -2px; }
+
+.main .buy .buy_left .share dl dd { float: left; height: 17px; width: 17px; background: url("../img/icons_0_16.png") no-repeat; cursor: pointer; margin-right: 5px; }
+
+.main .buy .buy_left .share dl dd:nth-child(2) { background-position: 0 -125px; }
+
+.main .buy .buy_left .share dl dd:nth-child(3) { background-position: 0 -104px; }
+
+.main .buy .buy_left .share dl dd:nth-child(4) { background-position: 0 -260px; }
+
+.main .buy .buy_left .share dl dd:nth-child(5) { background-position: 0 -208px; }
+
+.main .buy .buy_left .share dl dd:nth-child(6) { background-position: 0 -1612px; }
+
+.main .buy .buy_left .share dl dd:nth-child(7) { background-position: 0 0; cursor: initial; }
+
+.main .buy .buy_left .share .more { position: relative; }
+
+.main .buy .buy_left .share .more:hover .more_show { display: block; }
+
+.main .buy .buy_left .share .more .more_show { position: absolute; top: -362px; left: 0; width: 220px; height: 350px; border: 1px solid #ccc; z-index: 1000; background: white; display: none; }
+
+.main .buy .buy_left .share .more .more_show h3 { background: #f3f3f3; line-height: 30px; height: 30px; }
+
+.main .buy .buy_left .share .more .more_show ul { padding: 5px 7px; }
+
+.main .buy .buy_left .share .more .more_show ul li { float: left; }
+
+.main .buy .buy_left .share .more .more_show ul li a { display: block; color: #333; height: 36.5px; width: 100px; text-align: center; line-height: 35px; }
+
+.main .buy .buy_left .share .more .more_show ul li a:hover { background: #ddd; border-radius: 3px; color: #e53; }
+
+.main .buy .buy_left .share .more .more_show ul li a i { display: inline-block; vertical-align: middle; width: 17px; height: 17px; background: url("../img/icons_0_16.png") no-repeat 0 -208px; }
+
+.main .buy .buy_left .share .more .more_show p { background: #f3f3f3; }
+
+.main .buy .buy_left .share .more .more_show p a { height: 30px; line-height: 30px; padding-right: 10px; }
+
+.main .buy .buy_left .share .more .more_show p a:hover { color: #e53; }
+
+.main .buy .buy_left .share .more .more_show p a i { display: inline-block; vertical-align: middle; width: 17px; height: 17px; background: url("../img/icons_0_16.png") no-repeat 0 0; margin-right: 10px; }
+
+.main .buy .buy_main { width: 520px; margin-left: 20px; float: left; }

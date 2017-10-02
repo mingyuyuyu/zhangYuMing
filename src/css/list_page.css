@@ -158,29 +158,73 @@
 
 .nav h3 .menu .list_into dl dd a:hover { color: #FF6655; text-decoration: underline; }
 
-.nav ul li { float: left; }
+.nav .nav_list li { float: left; }
 
-.nav ul li a { display: block; height: 36px; font-size: 16px; color: #fff; padding: 0 18px; line-height: 36px; }
+.nav .nav_list li a { display: block; height: 36px; font-size: 16px; color: #fff; padding: 0 18px; line-height: 36px; }
 
-.nav ul li a:hover { background: #9a0000; }
+.nav .nav_list li a:hover { background: #9a0000; }
 
-.nav .car { height: 28px; color: #fff; padding: 8px 20px 0 10px; font-size: 16px; background: #c20; position: relative; }
+.nav .car { height: 28px; color: #fff; padding: 8px 17px 0 10px; font-size: 16px; background: #c20; position: relative; }
 
 .nav .car.hovershow { border: 2px solid #cc2200; background: #fef2ee; height: 24px; }
 
-.nav .car:hover a { color: #ee5533; }
+.nav .car:hover .buybuy { color: #ee5533; }
 
-.nav .car:hover span { color: #ee5533; }
+.nav .car:hover .car_qty { color: #ee5533; }
 
 .nav .car:hover em { background-position: -60px -21px; margin-top: -2px; }
 
 .nav .car em { display: inline-block; width: 20px; height: 19px; background: url("../img/toolbar.png") no-repeat -30px -21px; vertical-align: top; }
 
-.nav .car a { font-size: 16px; color: #fff; padding-right: 20px; }
+.nav .car .buybuy { font-size: 16px; color: #fff; padding-right: 20px; }
 
-.nav .car .car_detail { width: 298px; border: 2px solid #cc2200; position: absolute; top: 33px; height: 100px; background: #fef2ee; z-index: 991; right: -2px; display: none; }
+.nav .car .car_qty { display: inline-block; width: 22px; height: 20px; }
 
-.nav .car .car_detail span { border-top: 5px solid #fef2ee; position: absolute; right: 0px; top: 1px; display: block; width: 137px; top: -5px; z-index: 120; }
+.nav .car .car_detail { width: 298px; border: 2px solid #cc2200; position: absolute; top: 33px; background: #fef2ee; z-index: 991; right: -2px; display: none; }
+
+.nav .car .car_detail .xian { border-top: 5px solid #fef2ee; position: absolute; right: 0px; top: 1px; display: block; width: 146px; top: -5px; z-index: 120; }
+
+.nav .car .car_detail .yiadd { height: 45px; line-height: 45px; padding-left: 10px; color: #333; font-weight: normal; font-size: 16px; }
+
+.nav .car .car_detail .car_list { background: #fff; max-height: 300px; overflow: auto; }
+
+.nav .car .car_detail .car_list li { height: 80px; border-bottom: 1px dashed #ccc; color: #666; padding: 8px; }
+
+.nav .car .car_detail .car_list li .goodsimg { float: left; border: 1px solid #ccc; margin-right: 7px; }
+
+.nav .car .car_detail .car_list li .qtychange { width: 20px; height: 60px; float: left; border: 1px solid #ccc; margin-right: 7px; }
+
+.nav .car .car_detail .car_list li .qtychange span { display: block; width: 20px; height: 20px; box-sizing: border-box; line-height: 20px; text-align: center; border-bottom: 1px solid #ccc; font-size: 10px; }
+
+.nav .car .car_detail .car_list li .qtychange span:nth-child(3) { border-bottom: 0px; }
+
+.nav .car .car_detail .car_list li .goods_name { width: 155px; float: left; }
+
+.nav .car .car_detail .car_list li .goods_name a { font-size: 12px; color: #666; line-height: 20px; }
+
+.nav .car .car_detail .car_list li .goods_name a:hover { color: #ee5533; }
+
+.nav .car .car_detail .car_list li .goods_name .price { color: #ee5533; float: left; font-size: 12px; }
+
+.nav .car .car_detail .car_list li .goods_name .delete { float: right; color: #999; font-size: 12px; border: 0 none; cursor: pointer; background: #fff; margin-top: -4px; outline: none; }
+
+.nav .car .car_detail .car_list li .goods_name .delete:hover { text-decoration: underline; }
+
+.nav .car .car_detail .buycar_bottom { height: 80px; padding: 0 27px; padding-bottom: 15px; }
+
+.nav .car .car_detail .buycar_bottom p { color: #333; font-size: 12px; padding: 15px 0; text-align: right; }
+
+.nav .car .car_detail .buycar_bottom p a { margin-right: 10px; }
+
+.nav .car .car_detail .buycar_bottom p a .totalqty { color: #ee5533; }
+
+.nav .car .car_detail .buycar_bottom p .totalprice { color: #ee5533; font-weight: bold; font-size: 16px; }
+
+.nav .car .car_detail .buycar_bottom .clear { float: right; width: 110px; height: 25px; background: #ee5533; text-align: center; }
+
+.nav .car .car_detail .buycar_bottom .clear:hover { background: #cc2200; }
+
+.nav .car .car_detail .buycar_bottom .clear a { color: #fff; line-height: 25px; font-size: 14px; }
 
 .rightside { position: fixed; background: #0c0c0c; height: 100%; width: 36px; top: 0; right: 0; left: auto; z-index: 999; opacity: 0.95; }
 
@@ -386,7 +430,7 @@
 
 .main .article_r .sale_goods ul li .title a:hover { color: #ee5533; }
 
-.main .article_r .sale_goods ul li .huodong { height: 22px; line-height: 22px; color: #ee5533; padding-bottom: 10px; }
+.main .article_r .sale_goods ul li .huodong { height: 18px; line-height: 22px; color: #ee5533; padding-bottom: 10px; overflow: hidden; }
 
 .main .article_r .sale_goods ul li .saleqty { color: #999; }
 
@@ -402,7 +446,7 @@
 
 .main .article_r .sale_goods ul li .goods_bottom a.add_car { border-right: 1px solid #ddd; border-top: 1px solid #ddd; }
 
-.main .article_r .sale_goods ul li .goods_bottom a.add_car:hover { background: #ee5533; }
+.main .article_r .sale_goods ul li .goods_bottom a.add_car:hover { background: #ee5533; cursor: pointer; }
 
 .main .article_r .sale_goods ul li .goods_bottom a.add_car:hover span { color: #fff; }
 
@@ -451,3 +495,5 @@
 .main .article_r .sale_goods .pageLoading .loading span .writepage { width: 36px; border: 1px solid #ccc; height: 36px; margin: 0 10px 0 10px; outline: none; padding: 0; }
 
 .main .article_r .sale_goods .pageLoading .loading span.btn { width: 45px; height: 36px; border: 1px solid #ccc; cursor: pointer; }
+
+.main { width: 100%; }

@@ -105,7 +105,7 @@ define(['jquery'],function($){
             // 请求总开关
             var flog =0;
 
-            
+
             // 成功时返回的函数
                 function success(msg){
 
@@ -120,20 +120,20 @@ define(['jquery'],function($){
                             yunfei = '<span></span>'
                         }
                         return `<li data-id="${item.id}">
-                                <a href=""><img src="${item.imgurl}"></a>
+                                <a class="goodsimgs" href=""><img src="${item.imgurl}"></a>
                                 <p class="price">￥${item.price}${yunfei}</p>
                                 <p class="title"><a href="">${item.title}</a></p>
                                 <p class="huodong">${item.huodong}</p>
                                 <a class="saleqty">已售<span>${item.sele}</span></a>
                                 <a href="" class="pingjia">已有<span>${item.pingjia}</span>人评价</a>
-                                <div class="goods_bottom"><a href="" class="add_car"><i></i><span>加入购物车</span></a><a href="" class="shoucang"><i></i><span>收藏</span></a></div>
+                                <div class="goods_bottom"><a class="add_car"><i></i><span>加入购物车</span></a><a href="" class="shoucang"><i></i><span>收藏</span></a></div>
                                 </li>`
 
                     }).join('');
                     $('.sale_goods').html('');
                     $ul = $('<ul>').addClass('clearfix').html(html);
                     $('.sale_goods').append($ul);
-                    
+
                     // 共有多少件商品
                     $('.totalnum').html(msg.total);
 
@@ -141,12 +141,12 @@ define(['jquery'],function($){
                     $('.current_page').html(pageNo);
 
                     // 生成页码；
-                    
+
                     var pageLen = Math.ceil(msg.total/msg.qty);
                     // 共几页
-                    
+
                     $('.totalpage').html(pageLen);
-                   
+
                     $page = $('<div>').addClass('page').html('');
                     console.log(pageLen);
                     for(i=1;i<=pageLen;i++){
@@ -158,13 +158,13 @@ define(['jquery'],function($){
                     $loading = $('<div>').addClass('loading').html(html1);
                     $pageLoading = $('<div>').addClass('pageLoading').append([$page,$loading])
                     $('.sale_goods').append($pageLoading);
-                    
+
                     // 共几页
                      $('.totalpage1 em').html(pageLen);
                     // 点击页码跳转
-                    
+
                     $('.sale_goods .page').on('click','span',function(){
-                        
+
                         pageNo = $(this).html();
                         $('.current_page').html(pageNo);
                         flogCheck();
@@ -193,7 +193,7 @@ define(['jquery'],function($){
                         }else if(pageNo>$('.totalpage').text()){
                             pageNo = $('.totalpage').text();
                         }
-                       
+
                         flogCheck();
                     })
                     // 点击末页
@@ -229,10 +229,148 @@ define(['jquery'],function($){
                         }else if(pageNo>$('.totalpage').text()){
                             pageNo = $('.totalpage').text();
                         }
-                       
+
                         flogCheck();
                     })
 
+                    // 点击传参到详情页
+                    $('.goodsimgs').on('click',function(){
+                       var id = $(this).parent('li').attr('data-id')
+                       $(this).attr('href','../html/detail_page.html?id='+id)
+                    })
+                    $('.title a').on('click',function(){
+                       var id = $(this).parent().parent('li').attr('data-id')
+                       $(this).attr('href','../html/detail_page.html?id='+id)
+                    })
+
+                    // 加入购物车动画
+                    $('.add_car').on('click',function(){
+                        var currentId = $(this).parent().parent('li').attr('data-id')
+
+                        $.ajax({
+                                type:'post',
+                                data:{'id':currentId},
+                                url:'../api/car.php',
+                            })
+                        $('.sbar_nub').html(Number($('.sbar_nub').html())+1);
+                        $('.car_qty').html(Number($('.car_qty').html())+1);
+                        var $currentImg = $(this).parent().parent('li').find('img')
+                        var left = $(this).offset().left;
+                        var top = $(this).offset().top;
+                        var $copyImg = $currentImg.clone().appendTo($('body')).css({
+                            'position':'absolute',
+                            'top':top,
+                            'left':left,
+                            'width':'50px',
+                            'height':'50px'
+                        })
+                        var top1 =$(this).offset().top-($(this).offset().top-$(document).scrollTop()-$('.sbar_cat').position().top);
+                        var left1 = $('.sbar_cat').offset().left
+                        console.log(top1)
+                        $copyImg.animate({'top':top1}).animate({'left':left1},1500,function(){
+                            $copyImg.remove();
+                        })
+                    })
+
+                    // 购物车列表
+                    function carRequire(){
+                        $.ajax({
+                        type:'post',
+                        dataType:'json',
+                        url:'../api/carlist.php',
+                        success:function(msg){
+                            var totalqty = 0;
+                            var totalprice = 0;
+                            carHtml='<h4 class="yiadd">已加入购物车的商品</h4><ul class="car_list"></ul><div class="buycar_bottom"><p><a>共 <span class="totalqty">12</span>      件商品</a>共计：￥<span class="totalprice">222</span></p><div class="clear"><a href="">去购物车结算</a></div></div>'
+                            var listHtml = $.map(msg,function(item){
+
+                                totalqty +=Number(item.qty);
+                                totalprice+=Number(item.total)
+                                return `<li data-id="${item.id}">
+                                <a href="" class="goodsimg"><img src="${item.imgurl}" width="60" height="60"></a>
+                                <div class="qtychange"><span class="addqty">+</span><span class="goodsqty">${item.qty}</span><span class="decqty">-</span></div>
+                                <div class="goods_name"><a href="">${item.title}</a>
+                                <p><span class="price">${item.price}</span>
+                                <button class="delete">删除</button></p></div>
+
+                                </li>`
+                            }).join('');
+
+                            $('.car_detail').html(carHtml);
+                            $('.car_list').html(listHtml);
+                            $('.totalqty').html(totalqty);
+                            $('.totalprice').html(totalprice);
+                            $('.sbar_nub').html(totalqty);
+                            $('.car_qty').html(totalqty);
+                            $('.addqty').on('click',function(){
+                                var total = 0
+                                var id = $(this).parent().parent('li').attr('data-id')
+                                $(this).next().html(Number($(this).next().html())+1)
+                                var len =$('.car_list').children('li').length;
+                                for(i=0;i<len;i++){
+                                   var qty = $('.car_list').children('li').find('.goodsqty')[i].innerHTML;
+                                   var price = $('.car_list').children('li').find('.price')[i].innerHTML;
+                                   total+=qty*price;
+                                }
+                                    $('.totalprice').html(total);
+                                $.ajax({
+                                    type:'post',
+                                    data:{'id':id},
+                                    dataType:'json',
+                                    url:'../api/car.php',
+                                })
+                            })
+                            $('.decqty').on('click',function(){
+                                var id = $(this).parent().parent('li').attr('data-id')
+                                $(this).prev().html(Number($(this).prev().html())-1)
+                                var qty = $(this).prev().text()
+                                console.log(id)
+                                var len =$('.car_list').children('li').length;
+                                var total = 0;
+                                for(i=0;i<len;i++){
+                                   var qty = $('.car_list').children('li').find('.goodsqty')[i].innerHTML;
+                                   var price = $('.car_list').children('li').find('.price')[i].innerHTML;
+                                   total+=qty*price;
+                                }
+                                    $('.totalprice').html(total);
+                                $.ajax({
+                                    type:'post',
+                                    data:{'id':id},
+                                    url:'../api/deleteqty.php',
+                                    success:function(msg){
+                                        console.log(msg)
+                                    }
+                                })
+                            })
+                            $('.delete').on('click',function(){
+                                var id = $(this).parents('li').attr('data-id')
+                                $(this).parents('li').remove();
+
+                                var len =$('.car_list').children('li').length;
+                                console.log(len)
+                                var total = 0;
+                                for(i=0;i<len;i++){
+                                   var qty = $('.car_list').children('li').find('.goodsqty')[i].innerHTML;
+                                   var price = $('.car_list').children('li').find('.price')[i].innerHTML;
+                                   total+=qty*price;
+                                }
+                                    $('.totalprice').html(total);
+                                $.ajax({
+                                    type:'post',
+                                    data:{'id':id},
+                                    url:'../api/deleteqty.php',
+                                    success:function(msg){
+                                        console.log(msg)
+                                    }
+                                })
+                            })
+                        }
+                    })
+                    }
+                    carRequire();
+                    $('.car').on('mouseenter',function(){
+                        carRequire();
+                    })
                 }
 
             // 判断页面总开关，发送不同请求；
@@ -346,12 +484,12 @@ define(['jquery'],function($){
                 dataType:'json',
                 success:function(msg){
                     success(msg);
-                    
+
                 }
             })
             // 点击价格升序
             $('.rank_3').on('click',function(){
-                
+
                 flog=1;
                 // 重置页码为1；
                 pageNo=1;
@@ -362,12 +500,12 @@ define(['jquery'],function($){
                     dataType:'json',
                     success:function(msg){
                         success(msg);
-                        
+
                     }
                 })
                 $selector = $(this);
                 changeUp($selector);
-                
+
 
             })
             // 点击销量升序
@@ -381,12 +519,12 @@ define(['jquery'],function($){
                     dataType:'json',
                     success:function(msg){
                         success(msg);
-                        
+
                     }
                 })
                 $selector = $(this);
                 changeUp($selector);
-                
+
             })
             // 点击人气升序
             $('.rank_2').on('click',function(){
@@ -399,7 +537,7 @@ define(['jquery'],function($){
                     dataType:'json',
                     success:function(msg){
                         success(msg);
-                        
+
                     }
                 })
                  $selector = $(this);
@@ -416,7 +554,7 @@ define(['jquery'],function($){
                     dataType:'json',
                     success:function(msg){
                         success(msg);
-                        
+
                     }
                 })
                 $selector = $(this);
@@ -433,7 +571,7 @@ define(['jquery'],function($){
                     dataType:'json',
                     success:function(msg){
                         success(msg);
-                        
+
                     }
                 })
                  $selector = $(this);
@@ -450,7 +588,7 @@ define(['jquery'],function($){
                     dataType:'json',
                     success:function(msg){
                         success(msg);
-                        
+
                     }
                 })
                 $selector = $(this);
@@ -530,7 +668,8 @@ define(['jquery'],function($){
                 flogCheck();
             })
 
-            
+
         },
+
     }
 })
