@@ -180,16 +180,18 @@
         .buybuy{font-size:16px;color:#fff;padding-right:20px;}
         .car_qty{display:inline-block;width:22px;height:20px;}
         .car_detail{width:298px;border:2px solid #cc2200;position:absolute;top:33px;background: #fef2ee;z-index:991;right:-2px;display:none;
-            .xian{border-top:5px solid #fef2ee;position:absolute;right:0px;top:1px;
-                display:block;width:146px;top:-5px;z-index:120;}
+            .xian{border-top:5px solid #fef2ee;position:absolute;right:1px;
+                display:block;width:145px;top:-5px;z-index:120;}
+            .nogoods{height:70px;line-height:70px;text-align:center;color:#999;font-size:14px;}
             .yiadd{height:45px;line-height:45px;padding-left:10px;color:#333;font-weight:normal;font-size:16px;}
-            .car_list{background:#fff;
+            .car_list{background:#fff;border-left:1px solid #cc2200;border-right:1px solid #cc2200;
                 max-height:300px;overflow:auto;
                 li{height:80px;border-bottom:1px dashed #ccc;color:#666;padding:8px;
                     .goodsimg{float:left;border:1px solid #ccc;margin-right:7px;}
                     .qtychange{width:20px;height:60px;float:left;border:1px solid #ccc;margin-right:7px;
                         span{display:block;width:20px;height:20px;box-sizing:border-box;line-height:20px;text-align:center;border-bottom:1px solid #ccc;font-size:10px;
-                        &:nth-child(3){border-bottom:0px;}
+                        &:first-child{cursor:pointer;}
+                        &:nth-child(3){border-bottom:0px;cursor:pointer;}
                         }
                     }
                     .goods_name{width:155px;float:left;

@@ -182,11 +182,13 @@
 
 .nav .car .car_detail { width: 298px; border: 2px solid #cc2200; position: absolute; top: 33px; background: #fef2ee; z-index: 991; right: -2px; display: none; }
 
-.nav .car .car_detail .xian { border-top: 5px solid #fef2ee; position: absolute; right: 0px; top: 1px; display: block; width: 146px; top: -5px; z-index: 120; }
+.nav .car .car_detail .xian { border-top: 5px solid #fef2ee; position: absolute; right: 1px; display: block; width: 145px; top: -5px; z-index: 120; }
+
+.nav .car .car_detail .nogoods { height: 70px; line-height: 70px; text-align: center; color: #999; font-size: 14px; }
 
 .nav .car .car_detail .yiadd { height: 45px; line-height: 45px; padding-left: 10px; color: #333; font-weight: normal; font-size: 16px; }
 
-.nav .car .car_detail .car_list { background: #fff; max-height: 300px; overflow: auto; }
+.nav .car .car_detail .car_list { background: #fff; border-left: 1px solid #cc2200; border-right: 1px solid #cc2200; max-height: 300px; overflow: auto; }
 
 .nav .car .car_detail .car_list li { height: 80px; border-bottom: 1px dashed #ccc; color: #666; padding: 8px; }
 
@@ -196,7 +198,9 @@
 
 .nav .car .car_detail .car_list li .qtychange span { display: block; width: 20px; height: 20px; box-sizing: border-box; line-height: 20px; text-align: center; border-bottom: 1px solid #ccc; font-size: 10px; }
 
-.nav .car .car_detail .car_list li .qtychange span:nth-child(3) { border-bottom: 0px; }
+.nav .car .car_detail .car_list li .qtychange span:first-child { cursor: pointer; }
+
+.nav .car .car_detail .car_list li .qtychange span:nth-child(3) { border-bottom: 0px; cursor: pointer; }
 
 .nav .car .car_detail .car_list li .goods_name { width: 155px; float: left; }
 

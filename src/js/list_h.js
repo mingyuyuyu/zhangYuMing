@@ -32,12 +32,141 @@ define(['jquery'],function($){
             })
         },
 
-        // 购物车移入移出
+        // 购物车移入移出与生成购物车列表
         carOut:function(){
+            // 购物车列表
+                    function carRequire(){
+                        $.ajax({
+                        type:'post',
+                        dataType:'json',
+                        url:'../api/carlist.php',
+                        success:function(msg){
+                            if(msg.length>0){
+                            var totalqty = 0;
+                            var totalprice = 0;
+                            carHtml='<span class="xian"></span><h4 class="yiadd">已加入购物车的商品</h4><ul class="car_list"></ul><div class="buycar_bottom"><p><a>共 <span class="totalqty">12</span>      件商品</a>共计：￥<span class="totalprice">222</span></p><div class="clear"><a href="">去购物车结算</a></div></div>'
+                            var listHtml = $.map(msg,function(item){
+
+                                totalqty +=Number(item.qty);
+                                totalprice+=Number(item.total)
+                                return `<li data-id="${item.id}">
+                                <a href="" class="goodsimg"><img src="${item.imgurl}" width="60" height="60"></a>
+                                <div class="qtychange"><span class="addqty">+</span><span class="goodsqty">${item.qty}</span><span class="decqty">-</span></div>
+                                <div class="goods_name"><a href="">${item.title}</a>
+                                <p><span class="price">${item.price}</span>
+                                <button class="delete">删除</button></p></div>
+
+                                </li>`
+                            }).join('');
+
+                            $('.car_detail').html(carHtml);
+                            $('.car_list').html(listHtml);
+                            $('.totalqty').html(totalqty);
+                            $('.totalprice').html(totalprice);
+                            $('.sbar_nub').html(totalqty);
+                            $('.car_qty').html(totalqty);
+                            $('.addqty').on('click',function(){
+                                var total = 0;
+                                var totalqty = 0;
+                                var id = $(this).parent().parent('li').attr('data-id')
+                                $(this).next().html(Number($(this).next().html())+1)
+                                var len =$('.car_list').children('li').length;
+                                for(i=0;i<len;i++){
+                                    if(getComputedStyle($('.car_list').children('li')[i]).display!=='none'){
+                                   var qty = $('.car_list').children('li').find('.goodsqty')[i].innerHTML;
+                                   var price = $('.car_list').children('li').find('.price')[i].innerHTML;
+                                   total+=qty*price;
+                                   totalqty+=Number(qty);
+                                    }
+                                }
+                                    $('.totalprice').html(total);
+                                    $('.totalqty').html(totalqty);
+                                    $('.sbar_nub').html(Number($('.sbar_nub').html())+1);
+                                    $('.car_qty').html(Number($('.car_qty').html())+1);
+                                $.ajax({
+                                    type:'post',
+                                    data:{'id':id},
+                                    dataType:'json',
+                                    url:'../api/car.php',
+                                })
+                            })
+                            $('.decqty').on('click',function(){
+                                if($(this).prev().html()==1){
+                                    return;
+                                }
+                                var id = $(this).parent().parent('li').attr('data-id');
+
+                                var qty1 = $(this).prev().text();
+;
+                                $(this).prev().html(Number($(this).prev().html())-1);
+
+                                var len =$('.car_list').children('li').length;
+                                var total = 0;
+                                var totalqty = 0;
+                                for(i=0;i<len;i++){
+                                    if(getComputedStyle($('.car_list').children('li')[i]).display!=='none'){
+                                   var qty = $('.car_list').children('li').find('.goodsqty')[i].innerHTML;
+                                   var price = $('.car_list').children('li').find('.price')[i].innerHTML;
+                                   total+=qty*price;
+                                    totalqty+=Number(qty);
+                                    }
+                                }
+                                    $('.totalprice').html(total);
+                                    $('.totalqty').html(totalqty);
+                                    $('.sbar_nub').html($('.sbar_nub').html()-1);
+                                    $('.car_qty').html($('.car_qty').html()-1);
+                                $.ajax({
+                                    type:'post',
+                                    data:{'id':id,'qty':qty1},
+                                    url:'../api/deleteqty.php',
+                                    success:function(msg){
+                                        console.log(msg)
+                                    }
+                                })
+                            })
+                            $('.delete').on('click',function(){
+                                var id = $(this).parents('li').attr('data-id')
+                                    $(this).parents('li').css('display','none');
+                                var len =$('.car_list').children('li').length;
+                                var total = 0;
+                                for(i=0;i<len;i++){
+                                    if(getComputedStyle($('.car_list').children('li')[i]).display!=='none'){
+                                   var qty = $('.car_list').children('li').find('.goodsqty')[i].innerHTML;
+                                   var price = $('.car_list').children('li').find('.price')[i].innerHTML;
+                                   total+=qty*price;
+                                   }
+                                }
+                                    $('.totalprice').html(total);
+                                    var currentQty = $(this).parents('li').find('.goodsqty').html();
+                                    $('.totalqty').html($('.totalqty').html()-currentQty);
+                                    $('.sbar_nub').html($('.sbar_nub').html()-currentQty);
+                                    $('.car_qty').html($('.car_qty').html()-currentQty);
+                                $.ajax({
+                                    type:'post',
+                                    data:{'id':id},
+                                    url:'../api/deleteqty1.php',
+                                    success:function(msg){
+                                        console.log(msg)
+                                    }
+                                })
+                            })
+                            }else{
+                                var carHtml = '<span class="xian"></span><div class="nogoods">购物车还是空的，赶紧给爱宠挑点什么吧！</div>';
+                                $('.car_detail').html(carHtml);
+                                $('.sbar_nub').html('0');
+                                $('.car_qty').html('0');
+                            }
+                        }
+                    })
+                    }
+                    carRequire();
+
             $('.car').on('mouseenter',function(){
                 $(this).addClass('hovershow').children('.car_detail').show();
+                carRequire();
             }).on('mouseleave',function(){
-                 $(this).removeClass('hovershow').children('.car_detail').hide();
+                $(this).removeClass('hovershow').children('.car_detail').hide();
+                carRequire();
             })
         },
 
@@ -271,107 +400,8 @@ define(['jquery'],function($){
                             $copyImg.remove();
                         })
                     })
-
-                    // 购物车列表
-                    function carRequire(){
-                        $.ajax({
-                        type:'post',
-                        dataType:'json',
-                        url:'../api/carlist.php',
-                        success:function(msg){
-                            var totalqty = 0;
-                            var totalprice = 0;
-                            carHtml='<h4 class="yiadd">已加入购物车的商品</h4><ul class="car_list"></ul><div class="buycar_bottom"><p><a>共 <span class="totalqty">12</span>      件商品</a>共计：￥<span class="totalprice">222</span></p><div class="clear"><a href="">去购物车结算</a></div></div>'
-                            var listHtml = $.map(msg,function(item){
-
-                                totalqty +=Number(item.qty);
-                                totalprice+=Number(item.total)
-                                return `<li data-id="${item.id}">
-                                <a href="" class="goodsimg"><img src="${item.imgurl}" width="60" height="60"></a>
-                                <div class="qtychange"><span class="addqty">+</span><span class="goodsqty">${item.qty}</span><span class="decqty">-</span></div>
-                                <div class="goods_name"><a href="">${item.title}</a>
-                                <p><span class="price">${item.price}</span>
-                                <button class="delete">删除</button></p></div>
-
-                                </li>`
-                            }).join('');
-
-                            $('.car_detail').html(carHtml);
-                            $('.car_list').html(listHtml);
-                            $('.totalqty').html(totalqty);
-                            $('.totalprice').html(totalprice);
-                            $('.sbar_nub').html(totalqty);
-                            $('.car_qty').html(totalqty);
-                            $('.addqty').on('click',function(){
-                                var total = 0
-                                var id = $(this).parent().parent('li').attr('data-id')
-                                $(this).next().html(Number($(this).next().html())+1)
-                                var len =$('.car_list').children('li').length;
-                                for(i=0;i<len;i++){
-                                   var qty = $('.car_list').children('li').find('.goodsqty')[i].innerHTML;
-                                   var price = $('.car_list').children('li').find('.price')[i].innerHTML;
-                                   total+=qty*price;
-                                }
-                                    $('.totalprice').html(total);
-                                $.ajax({
-                                    type:'post',
-                                    data:{'id':id},
-                                    dataType:'json',
-                                    url:'../api/car.php',
-                                })
-                            })
-                            $('.decqty').on('click',function(){
-                                var id = $(this).parent().parent('li').attr('data-id')
-                                $(this).prev().html(Number($(this).prev().html())-1)
-                                var qty = $(this).prev().text()
-                                console.log(id)
-                                var len =$('.car_list').children('li').length;
-                                var total = 0;
-                                for(i=0;i<len;i++){
-                                   var qty = $('.car_list').children('li').find('.goodsqty')[i].innerHTML;
-                                   var price = $('.car_list').children('li').find('.price')[i].innerHTML;
-                                   total+=qty*price;
-                                }
-                                    $('.totalprice').html(total);
-                                $.ajax({
-                                    type:'post',
-                                    data:{'id':id},
-                                    url:'../api/deleteqty.php',
-                                    success:function(msg){
-                                        console.log(msg)
-                                    }
-                                })
-                            })
-                            $('.delete').on('click',function(){
-                                var id = $(this).parents('li').attr('data-id')
-                                $(this).parents('li').remove();
-
-                                var len =$('.car_list').children('li').length;
-                                console.log(len)
-                                var total = 0;
-                                for(i=0;i<len;i++){
-                                   var qty = $('.car_list').children('li').find('.goodsqty')[i].innerHTML;
-                                   var price = $('.car_list').children('li').find('.price')[i].innerHTML;
-                                   total+=qty*price;
-                                }
-                                    $('.totalprice').html(total);
-                                $.ajax({
-                                    type:'post',
-                                    data:{'id':id},
-                                    url:'../api/deleteqty.php',
-                                    success:function(msg){
-                                        console.log(msg)
-                                    }
-                                })
-                            })
-                        }
-                    })
-                    }
-                    carRequire();
-                    $('.car').on('mouseenter',function(){
-                        carRequire();
-                    })
                 }
+
 
             // 判断页面总开关，发送不同请求；
             function flogCheck(){
