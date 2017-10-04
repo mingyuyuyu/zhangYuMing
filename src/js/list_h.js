@@ -44,7 +44,7 @@ define(['jquery'],function($){
                             if(msg.length>0){
                             var totalqty = 0;
                             var totalprice = 0;
-                            carHtml='<span class="xian"></span><h4 class="yiadd">已加入购物车的商品</h4><ul class="car_list"></ul><div class="buycar_bottom"><p><a>共 <span class="totalqty">12</span>      件商品</a>共计：￥<span class="totalprice">222</span></p><div class="clear"><a href="">去购物车结算</a></div></div>'
+                            carHtml='<span class="xian"></span><h4 class="yiadd">已加入购物车的商品</h4><ul class="car_list"></ul><div class="buycar_bottom"><p><a>共 <span class="totalqty">12</span>      件商品</a>共计：￥<span class="totalprice">222</span></p><div class="clear"><a href="car.html">去购物车结算</a></div></div>'
                             var listHtml = $.map(msg,function(item){
 
                                 totalqty +=Number(item.qty);

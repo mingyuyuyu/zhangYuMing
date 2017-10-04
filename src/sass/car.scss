@@ -30,7 +30,7 @@ body{background:#f3f3f3;}
                 &.goods_price{width:50px;text-align:center;color: #e53;}
                 &.goods_qty{
                 width:100px;
-                    span{display:inline-block;width:20px;height:20px;border:1px solid #ccc;float:left;text-align:center;}
+                    span{display:inline-block;width:20px;height:20px;border:1px solid #ccc;float:left;text-align:center;cursor:pointer;}
                     .goodsqty{width:35px;border:1px solid #ccc;float:left;height:18px;text-align:center;}
                 }
                 &.goods_xiaoji{width:190px;text-align:center;color: #e53;font-weight:bold;}
@@ -39,6 +39,43 @@ body{background:#f3f3f3;}
                     span{display:block;text-align:center;color:#999;cursor:pointer;
                         &:hover{color:#e53;text-decoration:underline;}
                     }
+                }
+            }
+        }
+    }
+    .car_total{
+        margin-top:20px;background:#fff;height:80px;padding:0 8px;
+        .total_l{
+            padding-top:15px;
+            input{float:left;}
+            span{
+                float:left;cursor:pointer;
+                &.choseall{color:#333;}
+                &.del{color:#333;font-weight:bold;margin-left:35px;}
+                &.clearcar{color:#333;font-weight:bold;margin-left:35px;}
+                &:hover{color:#e53;}
+            }
+        }
+        .total_r{float:right;
+            .totalall{float:left;color:#999;
+                p{
+                    &:nth-child(1){
+                        padding-top:4px;
+                        a{color:#e53;font-size:20px;}
+                        .totalqty{color:#e53;font-weight:bold;}
+                        .totalprice{color:#e53;font-size:20px;}
+                    }
+                    &:nth-child(2){
+                        text-align:right;
+                    }
+                    &:nth-child(3){
+                        float:right;padding-top:7px;
+                    }
+                }
+            }
+            .gobuy{float:left;margin:20px 0 0 15px;
+                a{display:block;color:#fff;font-size:22px;background:#e53;padding:5px 15px;
+                    &:hover{background:#cc2200;}
                 }
             }
         }

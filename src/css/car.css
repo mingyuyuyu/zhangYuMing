@@ -48,7 +48,7 @@ body { background: #f3f3f3; }
 
 .buycar .carlist li div.goods_qty { width: 100px; }
 
-.buycar .carlist li div.goods_qty span { display: inline-block; width: 20px; height: 20px; border: 1px solid #ccc; float: left; text-align: center; }
+.buycar .carlist li div.goods_qty span { display: inline-block; width: 20px; height: 20px; border: 1px solid #ccc; float: left; text-align: center; cursor: pointer; }
 
 .buycar .carlist li div.goods_qty .goodsqty { width: 35px; border: 1px solid #ccc; float: left; height: 18px; text-align: center; }
 
@@ -59,3 +59,41 @@ body { background: #f3f3f3; }
 .buycar .carlist li div.goods_do span { display: block; text-align: center; color: #999; cursor: pointer; }
 
 .buycar .carlist li div.goods_do span:hover { color: #e53; text-decoration: underline; }
+
+.buycar .car_total { margin-top: 20px; background: #fff; height: 80px; padding: 0 8px; }
+
+.buycar .car_total .total_l { padding-top: 15px; }
+
+.buycar .car_total .total_l input { float: left; }
+
+.buycar .car_total .total_l span { float: left; cursor: pointer; }
+
+.buycar .car_total .total_l span.choseall { color: #333; }
+
+.buycar .car_total .total_l span.del { color: #333; font-weight: bold; margin-left: 35px; }
+
+.buycar .car_total .total_l span.clearcar { color: #333; font-weight: bold; margin-left: 35px; }
+
+.buycar .car_total .total_l span:hover { color: #e53; }
+
+.buycar .car_total .total_r { float: right; }
+
+.buycar .car_total .total_r .totalall { float: left; color: #999; }
+
+.buycar .car_total .total_r .totalall p:nth-child(1) { padding-top: 4px; }
+
+.buycar .car_total .total_r .totalall p:nth-child(1) a { color: #e53; font-size: 20px; }
+
+.buycar .car_total .total_r .totalall p:nth-child(1) .totalqty { color: #e53; font-weight: bold; }
+
+.buycar .car_total .total_r .totalall p:nth-child(1) .totalprice { color: #e53; font-size: 20px; }
+
+.buycar .car_total .total_r .totalall p:nth-child(2) { text-align: right; }
+
+.buycar .car_total .total_r .totalall p:nth-child(3) { float: right; padding-top: 7px; }
+
+.buycar .car_total .total_r .gobuy { float: left; margin: 20px 0 0 15px; }
+
+.buycar .car_total .total_r .gobuy a { display: block; color: #fff; font-size: 22px; background: #e53; padding: 5px 15px; }
+
+.buycar .car_total .total_r .gobuy a:hover { background: #cc2200; }

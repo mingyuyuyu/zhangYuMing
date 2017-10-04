@@ -1,0 +1,3 @@
+require.define(['jquery'],function($){
+
+})

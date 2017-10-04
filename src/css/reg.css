@@ -1,0 +1,41 @@
+body { background: #f3f3f3; }
+
+.container { width: 900px; margin: 0 auto; }
+
+.reg { width: 693px; background: #fff; padding: 40px 0 0 50px; }
+
+.reg .reg_title p { float: left; width: 220px; text-align: center; font: 20px/22px "Microsoft YaHei"; }
+
+.reg .reg_title p em { background: url("../img/login.png") no-repeat; display: inline-block; vertical-align: middle; width: 14px; height: 22px; margin-right: 10px; }
+
+.reg .reg_title p:nth-child(1) em { background-position: 0 -195px; }
+
+.reg .reg_title p:nth-child(2) em { width: 22px; background-position: -31px -195px; }
+
+.reg .reg_main .phone_reg { padding: 30px 0 40px 80px; margin-top: 20px; }
+
+.reg .reg_main .phone_reg div { overflow: hidden; margin-bottom: 10px; }
+
+.reg .reg_main .phone_reg div.yzm1 { width: 130px; float: left; }
+
+.reg .reg_main .phone_reg div.xieyi { padding-left: 100px; }
+
+.reg .reg_main .phone_reg div span { float: left; font: 16px/38px "Microsoft YaHei"; color: #666; width: 100px; text-align: right; }
+
+.reg .reg_main .phone_reg div .z1, .reg .reg_main .phone_reg div .z2, .reg .reg_main .phone_reg div .z3, .reg .reg_main .phone_reg div .z4, .reg .reg_main .phone_reg div .z5 { float: left; height: 28px; padding: 5px 0; font: 14px/28px "Microsoft YaHei"; border: none; width: 230px; outline: 0; border: 1px solid #ddd; padding: 5px 10px; color: #ccc; }
+
+.reg .reg_main .phone_reg div .z5 { width: 100px; }
+
+.reg .reg_main .phone_reg div .z6 { float: left; }
+
+.reg .reg_main .phone_reg div .z7 { height: 46px; width: 250px; border: 1px solid #e35342; background: #f65; color: #fff; font: 24px/46px "Microsoft YaHei"; cursor: pointer; text-align: center; line-height: 46px; margin: 25px 0 0 100px; }
+
+.reg .reg_main .phone_reg div p { float: left; }
+
+.reg .reg_main .phone_reg div p.showyzm { color: white; background: #ddd; text-align: center; width: 70px; height: 35px; line-height: 35px; }
+
+.reg .reg_main .phone_reg div a.huan { margin-left: 30px; }
+
+.reg .reg_main .phone_reg div a.xy { color: blue; }
+
+.reg .reg_main .phone_reg div em { font-style: normal; }
