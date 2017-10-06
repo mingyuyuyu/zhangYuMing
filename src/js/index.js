@@ -11,10 +11,9 @@ require.config({
 })
 
 require(['jquery','index_h','xcarousel','xcarousel1'],function($,ih){
-
+    ih.showEwm('.hr li:nth-child(1)');
+    ih.showEwm('.hr li:nth-child(2)');
     ih.showEwm('.hr li:nth-child(3)');
-    ih.showEwm('.hr li:nth-child(4)');
-    ih.showEwm('.hr li:nth-child(5)');
     ih.headInput('.search input');
     ih.navHover('.nav .nav_ul1 li');
     ih.navHover('.wep');
@@ -100,4 +99,7 @@ require(['jquery','index_h','xcarousel','xcarousel1'],function($,ih){
     ih.ajaxJson('.smallul','../api/data/indexList2.json');
     ih.ajaxJson('.waterul','../api/data/indexList3.json');
     ih.ajaxJson('.paul','../api/data/indexList4.json');
+
+    // 登录判断
+    ih.checkLogin();
 })

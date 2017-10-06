@@ -1,0 +1,75 @@
+body { background: #f3f3f3; }
+
+.container { width: 990px; margin: 0 auto; }
+
+.main { border: 1px solid #ddd; }
+
+.main .login { padding: 8px; background: #fff; }
+
+.main .login .login_l { width: 480px; }
+
+.main .login .login_r { width: 410px; padding: 25px 35px 0 0; }
+
+.main .login .login_r i { float: left; width: 30px; height: 24px; background: url("../img/login.png") no-repeat; }
+
+.main .login .login_r input { outline: none; }
+
+.main .login .login_r .username, .main .login .login_r .password { padding-left: 5px; border: 1px solid #ddd; }
+
+.main .login .login_r .username .i1, .main .login .login_r .password .i1 { background-position: 0 0; margin-top: 12px; }
+
+.main .login .login_r .username .i2, .main .login .login_r .password .i2 { background-position: -30px 0; margin-top: 12px; }
+
+.main .login .login_r .username input, .main .login .login_r .password input { color: #999; float: left; width: 350px; height: 28px; padding: 10px 0 10px 7px; font: 14px/28px "Microsoft YaHei"; border: none; }
+
+.main .login .login_r .yzm { margin-top: 10px; }
+
+.main .login .login_r .yzm .yzm1 { padding: 4px; border: 1px solid #ddd; }
+
+.main .login .login_r .yzm .yzm1 .yz { float: left; width: 100px; color: #666; text-align: right; font: 16px/38px "Microsoft YaHei"; }
+
+.main .login .login_r .yzm .yzm1 input { padding: 5px 0; border: none; color: #666; font: 14px/28px "Microsoft YaHei"; float: left; height: 28px; width: 80px; }
+
+.main .login .login_r .yzm .yzm1 em { width: 20px; height: 20px; float: left; margin: 10px 0 0 10px; }
+
+.main .login .login_r .yzm .yzm1 em.error { background: url("../img/login.png") no-repeat -36px -33px; }
+
+.main .login .login_r .yzm .yzm1 em.correct { background: url("../img/login.png") no-repeat -5px -33px; }
+
+.main .login .login_r .yzm .showyzm { width: 75px; height: 30px; line-height: 30px; background: #ccc; text-align: center; margin: 10px 0 0 10px; font-size: 16px; }
+
+.main .login .login_r .yzm .huan { float: left; margin: 20px 0 0 40px; color: blue; cursor: pointer; }
+
+.main .login .login_r .yzm .huan:hover { text-decoration: underline; }
+
+.main .login .login_r .remind { color: #f65; background: #ffebec; border: 1px solid #ffbdbf; padding: 7px 10px; margin-top: 10px; display: none; }
+
+.main .login .login_r .remind.show { display: block; }
+
+.main .login .login_r .bottom { margin-top: 10px; }
+
+.main .login .login_r .bottom .auto span { color: #666; }
+
+.main .login .login_r .bottom .forget { margin-top: 10px; }
+
+.main .login .login_r .bottom .forget a { float: left; color: #666; padding: 0 15px; border-right: 1px solid #ccc; height: 10px; line-height: 10px; }
+
+.main .login .login_r .bottom .forget a:nth-child(2) { border-right: 0px; }
+
+.main .login .login_r .bottom .forget a:hover { color: #e53; }
+
+.main .login .login_r .log { display: block; height: 46px; line-height: 46px; font-size: 20px; text-align: center; color: #fff; background: #f65; border: none; width: 100%; border: 1px solid #e35342; cursor: pointer; font: 24px/46px "Microsoft YaHei"; margin-top: 15px; }
+
+.main .login .login_r .login_bottom .hezuo { border-bottom: 1px solid #ccc; height: 14px; margin-top: 10px; }
+
+.main .login .login_r .login_bottom .hezuo span { background: #fff; text-align: center; width: 140px; margin: 0 auto; display: block; color: #999; line-height: 30px; }
+
+.main .login .login_r .login_bottom .qt_login ul { padding: 20px 0 0 100px; }
+
+.main .login .login_r .login_bottom .qt_login ul li { float: left; }
+
+.main .login .login_r .login_bottom .qt_login ul li a { display: block; height: 10px; line-height: 10px; padding: 0 10px; color: #666; border-right: 1px solid #999; }
+
+.main .login .login_r .login_bottom .qt_login ul li a:hover { color: #e53; }
+
+.main .login .login_r .login_bottom .qt_login ul li a.last { border-right: none; }

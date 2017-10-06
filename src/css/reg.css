@@ -1,6 +1,6 @@
 body { background: #f3f3f3; }
 
-.container { width: 900px; margin: 0 auto; }
+.container { width: 990px; margin: 0 auto; }
 
 .reg { width: 693px; background: #fff; padding: 40px 0 0 50px; }
 
@@ -16,7 +16,13 @@ body { background: #f3f3f3; }
 
 .reg .reg_main .phone_reg div { overflow: hidden; margin-bottom: 10px; }
 
-.reg .reg_main .phone_reg div.yzm1 { width: 130px; float: left; }
+.reg .reg_main .phone_reg div.yzm1 { width: 105px; float: left; padding-right: 25px; border: 1px solid #ddd; position: relative; }
+
+.reg .reg_main .phone_reg div.yzm1 i { width: 20px; height: 20px; position: absolute; right: 7px; top: 50%; transform: translate(0, -50%); }
+
+.reg .reg_main .phone_reg div.yzm1 i.error { width: 20px; height: 20px; background: url("../img/login.png") no-repeat -36px -33px; }
+
+.reg .reg_main .phone_reg div.yzm1 i.correct1 { width: 20px; height: 20px; background: url("../img/login.png") no-repeat -5px -33px; }
 
 .reg .reg_main .phone_reg div.xieyi { padding-left: 100px; }
 
@@ -24,17 +30,23 @@ body { background: #f3f3f3; }
 
 .reg .reg_main .phone_reg div .z1, .reg .reg_main .phone_reg div .z2, .reg .reg_main .phone_reg div .z3, .reg .reg_main .phone_reg div .z4, .reg .reg_main .phone_reg div .z5 { float: left; height: 28px; padding: 5px 0; font: 14px/28px "Microsoft YaHei"; border: none; width: 230px; outline: 0; border: 1px solid #ddd; padding: 5px 10px; color: #ccc; }
 
-.reg .reg_main .phone_reg div .z5 { width: 100px; }
+.reg .reg_main .phone_reg div .z5 { border: 0 none; width: 90px; }
 
 .reg .reg_main .phone_reg div .z6 { float: left; }
 
-.reg .reg_main .phone_reg div .z7 { height: 46px; width: 250px; border: 1px solid #e35342; background: #f65; color: #fff; font: 24px/46px "Microsoft YaHei"; cursor: pointer; text-align: center; line-height: 46px; margin: 25px 0 0 100px; }
+.reg .reg_main .phone_reg div .z7 { height: 46px; width: 250px; border: 1px solid #e35342; background: #f65; color: #fff; font: 24px/46px "Microsoft YaHei"; cursor: pointer; text-align: center; line-height: 46px; margin: 25px 0 0 100px; outline: none; }
 
-.reg .reg_main .phone_reg div p { float: left; }
+.reg .reg_main .phone_reg div p { float: left; margin: 5px 0 0 10px; }
 
-.reg .reg_main .phone_reg div p.showyzm { color: white; background: #ddd; text-align: center; width: 70px; height: 35px; line-height: 35px; }
+.reg .reg_main .phone_reg div p.showyzm { color: white; background: #ddd; text-align: center; width: 70px; height: 35px; line-height: 35px; font-size: 16px; }
 
-.reg .reg_main .phone_reg div a.huan { margin-left: 30px; }
+.reg .reg_main .phone_reg div p.remind { width: 210px; height: 25px; line-height: 25px; padding-left: 7px; background: #ffebec; border: 1px solid #ffbdbf; color: #f65; }
+
+.reg .reg_main .phone_reg div p.correct { width: 30px; height: 30px; background: url("../img/login.png") no-repeat -5px -33px; }
+
+.reg .reg_main .phone_reg div a.huan { margin-left: 30px; cursor: pointer; }
+
+.reg .reg_main .phone_reg div a.huan:hover { text-decoration: underline; color: #e53; }
 
 .reg .reg_main .phone_reg div a.xy { color: blue; }
 

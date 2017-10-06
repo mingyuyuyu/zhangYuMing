@@ -52,12 +52,12 @@ define(['jquery'],function($){
                     }else{youhuo=''}
                     var html = `<div class="shop_name"><p>${data.title}</p></div>
                                 <div class="shop_ad">${data.huodong}</div>
-                                <div class="shop_price"><p>波奇价${data.price}</p><p>厂商指导价${data.zhidaoprice}</p></div>
+                                <div class="shop_price"><p><span class="zz">波奇价：</span><span class="price">￥${data.price}</span></p><p class="zdprice clearfix"><span class="zz">厂商指导价：</span><del class="del">￥${data.zhidaoprice}</del></p></div>
                                 <div class="shop_main">
-                                <div><span>配 送 至：</span><p>广东</p>${youhuo}<span>${data.quan}</span></div>
-                                <div class="taozhuang"><span>1kg</span><span>3kg</span></div>
-                                <div class="shop_qty"><span class="qty">购买数量</span><span>-</span><input type="text"><span>+</span></div>
-                                <div class='shop_car'><button>立即购买</button><a>加入购物车</a><span><i></i>收藏商品</span></div>
+                                <div class="peisong"><span class="zz">配 送 至：</span><p class="area">广东<em></em></p><span class="huo">${youhuo}</span><span class="quan">${data.quan}</span></div>
+                                <div class="taozhuang"><span class="zz">套装：</span><span class="k1">1kg</span><span class="k2">3kg</span></div>
+                                <div class="shop_qty clearfix"><span class="zz">购买数量：</span><div class="qt"></span><span>-</span><input type="text" class="qty" value="1"><span>+</span>    件</div></div>
+                                <div class='shop_car'><button class="buy">立即购买</button><a class="addtocar"></a><span class="sc"></span></div>
                                 </div>`
                     $('.buy_main').html(html);
                 }

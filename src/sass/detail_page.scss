@@ -175,7 +175,61 @@
                 }
             }
         }
-        .buy_main{width:520px;margin-left:20px;float:left}
+        .buy_main{width:520px;margin-left:20px;float:left;
+            .shop_name{
+                p{font: 20px/28px "Microsoft YaHei";color: #333;text-overflow:ellipsis;overflow:hidden;}
+            }
+            .shop_ad{
+                font: normal 14px/16px "Microsoft YaHei";
+                    padding: 8px 0 10px;
+                    overflow: hidden;
+                    color:#e53;
+            }
+            .shop_price{background: #fef8f6;border-top: 1px solid #f3f3f3;padding: 0 10px 10px;font-family: Arial,"SimSun";
+                p{  .zz{float:left;color:#666;width: 80px;text-align: left;padding-top: 8px;letter-spacing: 4px;}
+                    &:first-child{margin-top:15px;overflow:hidden;
+                        .price{float: left;color: #e53;font-size:22px;font-weight:bold;}
+                    }
+                    &:nth-child(2){padding-bottom:15px;margin-top:15px;
+                        .zz{letter-spacing: 0px;}
+                        .del{float:left;color: #999;font-size: 14px;padding-top: 8px;}
+                    }
+                }
+
+            }
+            .peisong{padding-left:10px;overflow:hidden;
+                .zz{float:left;color:#666;width: 80px;text-align: left;padding-top: 8px;letter-spacing: 4px;}
+                .area{float:left;padding:5px;cursor:pointer;border:1px solid #ccc;
+                    em{float:right;background:url("../img/toolbar.png") no-repeat -22px -61px;width:9px;height:5px;margin-top:7px;margin-left:6px;}
+                }
+                .huo{float:left;color: #666;margin:5px 0 0 20px;}
+                .quan{color: #e53;float:left;margin-top:5px;margin-left:3px;}
+            }
+            .taozhuang{overflow:hidden;margin-top:15px;
+                padding-left:10px;
+                .zz{float:left;color:#666;width: 80px;text-align: left;padding-top: 8px;letter-spacing: 13px;}
+                .k1,.k2{float:left;border:1px dashed #ccc;width:40px;height:30px;text-align:center;line-height:30px;margin-right:5px;}
+            }
+            .shop_qty{padding-left:10px;line-height:24px;color:#666;margin-top:20px;
+                .zz{float:left;color:#666;width: 80px;text-align: left;padding-top: 8px;letter-spacing: 4px;}
+                .qt{float:left;margin:10px 5px 0 30px;
+                    span{float:left;width:15px;height:22px;border:1px solid #ccc;text-align:center;line-height:22px;}
+                    .qty{float:left;width:70px;height:20px;border:1px solid #ccc;text-align:center;font-weight:bold;}
+                }
+            }
+            .shop_car{overflow:hidden;margin-top:15px;padding-left:120px;
+                .buy{background: #e53;float:left;cursor: pointer;font: 16px/40px "Microsoft YaHei";color: #fff;    height: 40px;width: 130px;border:none;
+                    &:hover{background: #c20;}
+                }
+                .addtocar{
+                        width: 150px;height: 40px;cursor: pointer;float: left;background:url("../img/btn.png") no-repeat 0 0;margin-left:10px;
+                        &:hover{background-position:0 -50px;}
+                }
+                .sc{float:left;width: 75px;    cursor: pointer;    height: 16px;background:url("../img/btn.png") no-repeat -163px -12px;margin:13px 0 0 13px;
+                    &:hover{background-position:-163px -62px;}
+                }
+            }
+        }
     }
 
 }

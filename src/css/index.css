@@ -11,9 +11,25 @@
 
 .header .hr li { float: left; padding: 0 13px; margin: 10px 0 0; font-size: 14px; height: 16px; border-left: 1px solid #999999; line-height: 16px; position: relative; z-index: 12; }
 
-.header .hr li:nth-child(1) { border-left: 0 none; }
+.header .hr li.login_first { border-left: 0 none; width: 120px; text-align: center; height: 24px; }
 
-.header .hr li.current { width: 54px; padding: 9px 13px 0; height: 25px; border: 1px solid #ddd; margin: 0; border-bottom: 1px solid #fff; margin-right: -1px; top: 1px; line-height: 14px; }
+.header .hr li.login_first .username { color: #FF6655; }
+
+.header .hr li.login_first em { float: right; width: 9px; height: 5px; background: url("./img/toolbar.png") no-repeat -19px -37px; margin: 5px 0 0 5px; }
+
+.header .hr li.login_first:hover { border-bottom: 1px solid #fff; }
+
+.header .hr li.login_first:hover .indencity { display: block; }
+
+.header .hr li.login_first:hover em { background-position: -40px -37px; }
+
+.header .hr li.login_second { border-left: 0 none; }
+
+.header .hr li.first { border-left: 0 none; }
+
+.header .hr li.none { display: none; }
+
+.header .hr li.current { width: 54px; padding: 9px 13px 0; height: 25px; border: 1px solid #ddd; margin: 0; border-bottom: 1px solid #fff; margin-right: -1px; top: 1px; line-height: 15px; }
 
 .header .hr li a { color: #000000; }
 
@@ -21,9 +37,15 @@
 
 .header .hr li i { display: block; width: 20px; height: 16px; float: left; background: url("./img/toolbar.png"); }
 
-.header .hr li div { position: absolute; top: 35px; width: 120px; height: 120px; border: 1px solid #ddd; border-top: 1px solid #fff; left: -41px; display: none; padding-top: 15px; z-index: 1005; background-color: white; }
+.header .hr li div { position: absolute; top: 35px; width: 120px; height: 120px; border: 1px solid #ddd; border-top: 1px solid #fff; left: -41px; padding-top: 15px; z-index: 1005; background-color: white; display: none; }
 
 .header .hr li div img { margin: 0 auto; }
+
+.header .hr li div.indencity { left: 17px; height: 120px; padding: 0; top: 26px; }
+
+.header .hr li div.indencity dd { height: 40px; line-height: 40px; }
+
+.header .hr li div.indencity dd:hover { background: #ccc; }
 
 .header .hr li div.ewm3 { height: 140px; width: 240px; left: -153px; }
 
