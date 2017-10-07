@@ -2,7 +2,7 @@
 
 body { background: #f3f3f3; }
 
-.buycar { width: 100%; }
+.buycar { width: 100%; margin-top: 30px; }
 
 .buycar .car_title { background: #efefef; height: 35px; }
 

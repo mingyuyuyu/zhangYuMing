@@ -700,6 +700,39 @@ define(['jquery'],function($){
 
 
         },
+            // 登录判断
+            checkLogin:function(){
+                $.ajax({
+                    type:'get',
+                    url:'../api/checklogin.php',
+                    success:function(msg){
+                        if(msg=='fail'){
+                            var $first = $('<li>').addClass('first').addClass('tr').html('<a href="login.html">登录</a>')
+                            var $second = $('<li>').addClass('second').addClass('tr').html('<a href="reg.html">注册</a>')
+                            $('.hr').prepend($second);
+                            $('.hr').prepend($first);
+                        }else{
+                            var $login_first = $('<li>').addClass('login_first').addClass('tr').html('<span class="username">'+msg+'</span><em></em>')
+                            var $login_second = $('<li>').addClass('login_second').addClass('tr').html('<a href="">消息</a>')
+                            var $indencity = $('<div>').addClass('indencity').html('<dl><dd><a href="">个人中心</a></dd><dd><a href="">我的主页</a></dd><dd><a href="list_page.html" class="out">退出登录</a></dd></dl>')
+                            $login_first.append($indencity)
+                            $('.hr').prepend($login_second);
+                            $('.hr').prepend($login_first);
 
+                            // 退出登录
+                            $('.out').on('click',function(){
+                                $.ajax({
+                                    type:'get',
+                                    data:{'out':'out'},
+                                    url:'../api/checklogin.php',
+                                    success:function(){
+
+                                    }
+                                })
+                            })
+                        }
+                    }
+                })
+            }
     }
 })

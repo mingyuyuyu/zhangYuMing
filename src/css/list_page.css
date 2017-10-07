@@ -34,11 +34,33 @@
 
 .header .toolbar .right ul .tr { float: left; padding: 0 10px; margin: 10px 0; line-height: 16px; border-right: 1px solid #ddd; position: relative; }
 
+.header .toolbar .right ul .tr.login_first { border-right: 0 none; width: 120px; text-align: center; margin: 0; padding: 10px; }
+
+.header .toolbar .right ul .tr.login_first .username { color: #FF6655; }
+
+.header .toolbar .right ul .tr.login_first em { float: right; width: 9px; height: 5px; background: url("./img/toolbar.png") no-repeat -19px -37px; margin: 5px 0 0 5px; }
+
+.header .toolbar .right ul .tr.login_first:hover { border-bottom: 1px solid #fff; }
+
+.header .toolbar .right ul .tr.login_first:hover .indencity { display: block; }
+
+.header .toolbar .right ul .tr.login_first:hover em { background-position: -40px -37px; }
+
+.header .toolbar .right ul .tr.login_second { border-left: 0 none; }
+
+.header .toolbar .right ul .tr.first { border-left: 0 none; }
+
 .header .toolbar .right ul .tr.home { border-right: 1px solid #fff; }
 
 .header .toolbar .right ul .tr.home img { float: left; padding-right: 10px; padding-top: 2px; }
 
 .header .toolbar .right ul .tr.show { height: 36px; margin: 0 0 0 -1px; border: 1px solid #ddd; line-height: 36px; border-bottom: 1px solid #fff; z-index: 99; margin-top: -1px; }
+
+.header .toolbar .right ul .tr .indencity { left: 17px; height: 120px; padding: 0; top: 26px; display: none; position: absolute; top: 35px; z-index: 999; background: white; width: 120px; }
+
+.header .toolbar .right ul .tr .indencity dd { height: 40px; line-height: 40px; }
+
+.header .toolbar .right ul .tr .indencity dd:hover { background: #ccc; }
 
 .header .toolbar .right ul .tr .tel_show { position: absolute; top: 37px; right: -1px; width: 220px; border: 1px solid #ccc; background: #fff; border-top: 1px solid #fff; display: none; padding-right: 20px; padding-bottom: 10px; }
 

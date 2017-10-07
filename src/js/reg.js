@@ -17,4 +17,11 @@ require(['jquery','reg_h'],function($,ih){
 
     // 信息验证
     ih.yanzheng();
+
+    // 头部尾部导入
+    $('.header').load('header.html');
+    $('.footer').load('footer.html');
+
+    // 登录判断
+    ih.checkLogin();
 })

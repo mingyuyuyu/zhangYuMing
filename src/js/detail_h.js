@@ -1,7 +1,6 @@
 define(['jquery'],function($){
 	return {
 		getImg:function(){
-            console.log(666)
             var params = location.search;
             var id = params.slice(4,);
             $.ajax({
@@ -42,7 +41,6 @@ define(['jquery'],function($){
                 url:'../api/goodsforid.php',
                 dataType:'json',
                 success:function(data){
-                    console.log(data)
                     data = data[0];
                     if(data.youhuo!==null){
                         var youhuo = '<span>有货;</span>'
@@ -62,7 +60,39 @@ define(['jquery'],function($){
                     $('.buy_main').html(html);
                 }
             })
+        },
 
+        // 顶部吸顶
+        upTop:function(){
+
+            $(window).on('scroll',function(){
+                if($(this).scrollTop()>673){
+                   $('.at').addClass('fixed').find('.a_car').addClass('show');
+                   $('.am').css({'margin-top':'43px'})
+                }else{
+                     $('.at').removeClass('fixed').find('.a_car').removeClass('show');
+                     $('.am').css({'margin-top':'0'})
+                }
+            })
+        },
+         // 商品信息接收
+        imgRequire:function(){
+            var params = location.search;
+            var id = params.slice(4,);
+            $.ajax({
+                type:'post',
+                data:{'id':id},
+                url:'../api/imgshow.php',
+                dataType:'json',
+                success:function(res){
+                    for(i=11;i<=17;i++){
+                        var $goodsimg = $('<img>').attr('src',res[0][i])
+                        $('.mt').append($goodsimg);
+                    }
+                }
+            })
         }
+
+
 	}
 })

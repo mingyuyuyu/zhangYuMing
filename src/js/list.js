@@ -31,5 +31,9 @@ require(['jquery','list_h'],function($,ih){
     // ajax请求数据
     ih.requireGoods();
 
+    // 倒入尾部
+    $('.footer').load('footer.html')
 
+    // 登录判断
+    ih.checkLogin();
 })

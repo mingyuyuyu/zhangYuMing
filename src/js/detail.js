@@ -15,4 +15,10 @@ require(['jquery','detail_h','xzoom'],function($,ih){
     // 获取商品信息
     ih.getDetail();
 
+    // 顶部吸顶
+    ih.upTop();
+
+    // 获取商品图片信息
+    ih.imgRequire();
+
 })

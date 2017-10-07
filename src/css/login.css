@@ -2,7 +2,7 @@ body { background: #f3f3f3; }
 
 .container { width: 990px; margin: 0 auto; }
 
-.main { border: 1px solid #ddd; }
+.main { border: 1px solid #ddd; margin-top: 40px; }
 
 .main .login { padding: 8px; background: #fff; }
 

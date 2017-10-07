@@ -15,4 +15,10 @@ require(['jquery','login_h'],function($,ih){
 
     // 验证信息
     ih.yanzheng();
+
+    // 导入头部尾部
+    $('.header').load('header.html');
+    $('.footer').load('footer.html');
+    // 登录判断
+    ih.checkLogin();
 })

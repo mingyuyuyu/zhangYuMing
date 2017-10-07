@@ -235,3 +235,71 @@
 .main .buy .buy_main .shop_car .sc { float: left; width: 75px; cursor: pointer; height: 16px; background: url("../img/btn.png") no-repeat -163px -12px; margin: 13px 0 0 13px; }
 
 .main .buy .buy_main .shop_car .sc:hover { background-position: -163px -62px; }
+
+.main .article { margin-top: 25px; }
+
+.main .article .article_l { width: 190px; }
+
+.main .article .article_r { margin-left: 10px; }
+
+.main .article .article_r .at { width: 988px; background: #f3f3f3; border: 1px solid #ddd; }
+
+.main .article .article_r .at.fixed { position: fixed; top: 0; left: 0; width: 100%; padding-left: 365px; }
+
+.main .article .article_r .at .title li { float: left; height: 40px; border-right: 1px solid #ddd; }
+
+.main .article .article_r .at .title li.active { background: #fff; color: #e53; border-top: 3px solid #e53; border-bottom: 1px solid #fff; position: relative; top: 1px; }
+
+.main .article .article_r .at .title li a { padding: 0 20px; font: 14px/40px "Microsoft YaHei"; color: #333; cursor: pointer; }
+
+.main .article .article_r .at .title li a span { color: #e53; }
+
+.main .article .article_r .at .a_car { background: #e53; color: #fff; font: 16px/34px "Microsoft YaHei"; padding: 0 15px; margin: 3px 3px 0 0; display: none; }
+
+.main .article .article_r .at .a_car.show { position: absolute; right: 530px; left: auto; display: block; }
+
+.main .article .article_r .am { border: 1px solid #ddd; padding: 10px 20px 20px; border-top: none; width: 948px; }
+
+.main .article .article_r .am .am_1 { width: 942px; border: 4px solid #c64e5a; }
+
+.main .article .article_r .am .am_1 h1 { background: #c64e5a; height: 70px; line-height: 70px; font-size: 30px; text-align: center; color: #fff; }
+
+.main .article .article_r .am .am_1 .overf .szgoods { width: 443px; padding: 10px; border: 4px solid #c2404d; }
+
+.main .article .article_r .am .am_1 .overf .szgoods .szgoods_l { width: 280px; float: left; }
+
+.main .article .article_r .am .am_1 .overf .szgoods .szgoods_l p:first-child { height: 30px; line-height: 30px; font-size: 18px; color: #333; overflow: hidden; }
+
+.main .article .article_r .am .am_1 .overf .szgoods .szgoods_l p:nth-child(2) { height: 25px; line-height: 25px; font-size: 14px; color: #626262; }
+
+.main .article .article_r .am .am_1 .overf .szgoods .szgoods_l p:nth-child(3) { color: #ee5533; font-size: 18px; line-height: 40px; margin-bottom: 10px; height: 40px; }
+
+.main .article .article_r .am .am_1 .overf .szgoods .szgoods_l p:nth-child(3) del { color: #626262; font-size: 14px; }
+
+.main .article .article_r .am .am_1 .overf .szgoods .szgoods_l p:nth-child(4) { width: 120px; height: 35px; line-height: 35px; background: #ee5533; color: #fff; font-size: 21px; text-align: center; border-radius: 16px; margin-left: 6px; margin-top: 15px; }
+
+.main .article .article_r .am .am_1 .overf .szgoods .szgoods_r { float: left; }
+
+.main .article .article_r .am .am_1 .goodslist ul li { float: left; padding: 22px 10px 10px 10px; width: 211px; height: 245px; border: 4px solid #c2404d; border-top: none; border-right: none; }
+
+.main .article .article_r .am .am_1 .goodslist ul li:nth-child(4n) { border-right: 2px solid #c2404d; }
+
+.main .article .article_r .am .am_1 .goodslist ul li img { margin: 0 35px 10px 35px; }
+
+.main .article .article_r .am .am_1 .goodslist ul li .bu span { display: block; }
+
+.main .article .article_r .am .am_1 .goodslist ul li .bu span:first-child { font-size: 14px; color: #333; height: 25px; line-height: 25px; width: 210px; overflow: hidden; }
+
+.main .article .article_r .am .am_1 .goodslist ul li .bu .bu_b { position: relative; }
+
+.main .article .article_r .am .am_1 .goodslist ul li .bu .bu_b span:first-child { color: #626262; }
+
+.main .article .article_r .am .am_1 .goodslist ul li .bu .bu_b span:nth-child(2) { color: #f74942; font-size: 18px; margin-bottom: 6px; }
+
+.main .article .article_r .am .am_1 .goodslist ul li .bu .bu_b span:nth-child(2) em { font-style: normal; font-size: 12px; text-decoration: line-through; color: #333; }
+
+.main .article .article_r .am .am_2 { margin-top: 20px; }
+
+.main .article .article_r .am .am_2 h1 { color: #e53; border-bottom: 1px solid #ddd; }
+
+.main .article .article_r .am .am_2 .mt { width: 750px; margin: 15px auto; }

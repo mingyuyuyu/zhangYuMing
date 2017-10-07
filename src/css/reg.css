@@ -2,6 +2,8 @@ body { background: #f3f3f3; }
 
 .container { width: 990px; margin: 0 auto; }
 
+.regg { margin-top: 50px; }
+
 .reg { width: 693px; background: #fff; padding: 40px 0 0 50px; }
 
 .reg .reg_title p { float: left; width: 220px; text-align: center; font: 20px/22px "Microsoft YaHei"; }
