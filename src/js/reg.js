@@ -4,7 +4,7 @@ require.config({
     }
 })
 
-require(['jquery','reg_h'],function($,ih){
+require(['jquery','reg_h','common'],function($,ih,common){
     // 随机验证码
     ih.yanzhengma('.showyzm',4)
     // 验证码随机颜色
@@ -18,9 +18,16 @@ require(['jquery','reg_h'],function($,ih){
     // 信息验证
     ih.yanzheng();
 
-    // 头部尾部导入
-    $('.header').load('header.html');
-    $('.footer').load('footer.html');
+    // 导入头部尾部
+    $('.header').load('header.html',function(){
+        common.showRegion();
+        common.showEwm();
+    });
+    $('.footer').load('footer.html',function(){
+        common.showEwm('.tel');
+        common.showEwm('.gz');
+        common.showEwm('.home');
+    });
 
     // 登录判断
     ih.checkLogin();

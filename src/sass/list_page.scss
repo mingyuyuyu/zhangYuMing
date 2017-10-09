@@ -244,7 +244,7 @@
     ul{ padding-top:130px;
         li{     border-top: 1px solid #343434;padding:5px 0;
             &:nth-child(6){border-bottom:1px solid #343434;}
-            &:last-child{margin-top:160px;border-bottom:1px solid #343434;}
+            &:last-child{margin-top:50px;border-bottom:1px solid #343434;}
             i{display:block;background:url("../img/sbar_ico.png") no-repeat;width:36px;height:36px;cursor:pointer;margin:0 auto;font-style:normal;color:#fff;line-height:36px;text-align:center;
                 &.sbar_my{background-position:0 0;}
                 &.sbar_cat{background-position:0 -36px;}
@@ -293,11 +293,11 @@
 .main{
     width:100%;margin-top:20px;
     .article_l{
-        width:190px;overflow:hidden;float:left;background:#F3F3F3;
-        h1{padding:6px 10px;font-size:16px; border:1px solid #ddd;color:#333;font-weight:normal;
+        width:190px;overflow:hidden;float:left;
+        h1{padding:6px 10px;font-size:16px; border:1px solid #ddd;color:#333;font-weight:normal;background:#F3F3F3;
             i{display:block;float:left;width:26px;height:26px;background:url("../img/list_icon.png") no-repeat -30px -34px;margin-right:10px;}
         }
-        .goodsshow{border-left:1px solid #ddd;border-right:1px solid #ddd;border-bottom:1px solid #ddd;
+        .goodsshow{border-left:1px solid #ddd;border-right:1px solid #ddd;border-bottom:1px solid #ddd;background:#F3F3F3;
             li{margin:6px 10px;border-bottom:1px solid #ddd;
                 &:nth-child(1){background:white;border-bottom:1px solid #ddd;border-bottom:1px solid #ddd;padding:0px;margin:0;
                     .top_detail{border-bottom:0 none;padding:8px 10px;border-right:1px solid #fff;margin-right:-1px;display:block;}
@@ -327,6 +327,33 @@
                         padding:6px 0;margin-left:8px;vertical-align:bottom;color:#333;
                         &:hover{background:#ee5533;color:white;}
                     }
+                }
+            }
+        }
+        .rmgoods{
+            background:#fff;
+            h1{border-bottom:none;}
+            ul{border:1px solid #ddd;border-top:0px;padding:10px;
+                li{margin-top: 10px;
+                    img{margin:0 auto;}
+                    p{overflow:hidden;
+                        span{
+                            &:first-child{color:#e53;float:left;font-weight:bold;font-size:14px;}
+                            &:nth-child(2){color:#999;float:right;}
+                        }
+                    }
+                    a{display:block;color: #333;margin-top: 10px;line-height: 20px;
+                        &:hover{color:#e53;}
+                    }
+                }
+            }
+        }
+        .pptj{margin-top:10px;
+            h1{background:#fff;}
+            ul{border-left:1px solid #e6e6e6;
+                li{
+                    float:left;width: 81px;height: 36px;padding: 6px;border-right: 1px solid #e6e6e6;border-bottom: 1px solid #e6e6e6;
+                    img{width:80px;height:36px;}
                 }
             }
         }

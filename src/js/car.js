@@ -4,13 +4,19 @@ require.config({
     }
 })
 
-require(['jquery','car_h'],function($,ih){
+require(['jquery','car_h','common'],function($,ih,common){
     ih.carList();
 
-    // 导入头部
-    $('.header').load('header.html');
-    // 导入尾部
-    $('.footer').load('footer.html');
+    // 导入头部尾部
+    $('.header').load('header.html',function(){
+        common.showRegion();
+        common.showEwm();
+    });
+    $('.footer').load('footer.html',function(){
+        common.showEwm('.tel');
+        common.showEwm('.gz');
+        common.showEwm('.home');
+    });
 
     // 登录判断
     ih.checkLogin();

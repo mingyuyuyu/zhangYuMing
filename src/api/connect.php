@@ -14,4 +14,5 @@
 
     // 设置字符集
     $conn->set_charset('utf8');
+
 ?>

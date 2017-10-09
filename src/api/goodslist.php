@@ -41,5 +41,11 @@
         'qty' => $qty
     );
     // var_dump ($res);
-    echo json_encode($res,JSON_UNESCAPED_UNICODE)
+    echo json_encode($res,JSON_UNESCAPED_UNICODE);
+
+    // 释放查询内存(销毁)
+    $result->free();
+
+    //关闭连接
+    $conn->close();
 ?>

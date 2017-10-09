@@ -400,6 +400,8 @@ define(['jquery'],function($){
                             $copyImg.remove();
                         })
                     })
+                    // 切换页面返回顶部
+                    $('body').animate({scrollTop:0},0)
                 }
 
 
@@ -733,6 +735,34 @@ define(['jquery'],function($){
                         }
                     }
                 })
-            }
+            },
+        // 热卖商品列表
+        hotGoods:function(){
+            var pageNo=1;
+            var qty = 3;
+            $.ajax({
+                type:'post',
+                dataType:'json',
+                url:'../api/goodslist.php',
+                data:{'pageNo':pageNo,'qty':qty,'xl':'xl'},
+                success:function(msg){
+                    var hot = $.map(msg.data,function(item){
+                        return `<li>
+                        <a href=""><img src="${item.imgurl}" width="170" height="170"></a>
+                        <p><span class="price">￥${item.price}</span class="xl"><span>已售${item.sele}</span></p>
+                        <a href="">${item.title}</a>
+                        </li>`
+                    }).join('')
+                    $('.rmlist').html(hot);
+
+                }
+            })
+        },
+        // 右侧栏动画
+        rightSide:function(){
+            $('.gotop').on('click',function(){
+                $('body').animate({scrollTop:0},300)
+            })
+        }
     }
 })

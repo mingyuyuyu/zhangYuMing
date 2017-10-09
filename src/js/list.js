@@ -36,4 +36,10 @@ require(['jquery','list_h'],function($,ih){
 
     // 登录判断
     ih.checkLogin();
+
+    // 热卖商品列表请求
+    ih.hotGoods();
+
+    // 右侧栏动画
+    ih.rightSide();
 })

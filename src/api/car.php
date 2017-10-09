@@ -18,4 +18,10 @@
         } else {
             echo "Error: " . $sql1 . "<br>" . $conn->error;
         }
+
+    // 释放查询内存(销毁)
+    $result->free();
+
+    //关闭连接
+    $conn->close();
 ?>

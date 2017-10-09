@@ -2,7 +2,7 @@ require.config({
     paths:{jquery:'../lib/jquery-3.1.1'}
 })
 
-require(['jquery','login_h'],function($,ih){
+require(['jquery','login_h','common'],function($,ih,common){
 
     // 验证码随机
     ih.yanzhengma('.showyzm');
@@ -17,8 +17,16 @@ require(['jquery','login_h'],function($,ih){
     ih.yanzheng();
 
     // 导入头部尾部
-    $('.header').load('header.html');
-    $('.footer').load('footer.html');
+    $('.header').load('header.html',function(){
+        common.showRegion();
+        common.showEwm();
+    });
+    $('.footer').load('footer.html',function(){
+        common.showEwm('.tel');
+        common.showEwm('.gz');
+        common.showEwm('.home');
+    });
+    
     // 登录判断
     ih.checkLogin();
 })

@@ -260,7 +260,7 @@
 
 .rightside ul li:nth-child(6) { border-bottom: 1px solid #343434; }
 
-.rightside ul li:last-child { margin-top: 160px; border-bottom: 1px solid #343434; }
+.rightside ul li:last-child { margin-top: 50px; border-bottom: 1px solid #343434; }
 
 .rightside ul li i { display: block; background: url("../img/sbar_ico.png") no-repeat; width: 36px; height: 36px; cursor: pointer; margin: 0 auto; font-style: normal; color: #fff; line-height: 36px; text-align: center; }
 
@@ -326,13 +326,13 @@
 
 .main { width: 100%; margin-top: 20px; }
 
-.main .article_l { width: 190px; overflow: hidden; float: left; background: #F3F3F3; }
+.main .article_l { width: 190px; overflow: hidden; float: left; }
 
-.main .article_l h1 { padding: 6px 10px; font-size: 16px; border: 1px solid #ddd; color: #333; font-weight: normal; }
+.main .article_l h1 { padding: 6px 10px; font-size: 16px; border: 1px solid #ddd; color: #333; font-weight: normal; background: #F3F3F3; }
 
 .main .article_l h1 i { display: block; float: left; width: 26px; height: 26px; background: url("../img/list_icon.png") no-repeat -30px -34px; margin-right: 10px; }
 
-.main .article_l .goodsshow { border-left: 1px solid #ddd; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; }
+.main .article_l .goodsshow { border-left: 1px solid #ddd; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; background: #F3F3F3; }
 
 .main .article_l .goodsshow li { margin: 6px 10px; border-bottom: 1px solid #ddd; }
 
@@ -367,6 +367,36 @@
 .main .article_l .goodsshow li .top_detail a { display: inline-block; width: 70px; text-align: center; padding: 6px 0; margin-left: 8px; vertical-align: bottom; color: #333; }
 
 .main .article_l .goodsshow li .top_detail a:hover { background: #ee5533; color: white; }
+
+.main .article_l .rmgoods { background: #fff; }
+
+.main .article_l .rmgoods h1 { border-bottom: none; }
+
+.main .article_l .rmgoods ul { border: 1px solid #ddd; border-top: 0px; padding: 10px; }
+
+.main .article_l .rmgoods ul li { margin-top: 10px; }
+
+.main .article_l .rmgoods ul li img { margin: 0 auto; }
+
+.main .article_l .rmgoods ul li p { overflow: hidden; }
+
+.main .article_l .rmgoods ul li p span:first-child { color: #e53; float: left; font-weight: bold; font-size: 14px; }
+
+.main .article_l .rmgoods ul li p span:nth-child(2) { color: #999; float: right; }
+
+.main .article_l .rmgoods ul li a { display: block; color: #333; margin-top: 10px; line-height: 20px; }
+
+.main .article_l .rmgoods ul li a:hover { color: #e53; }
+
+.main .article_l .pptj { margin-top: 10px; }
+
+.main .article_l .pptj h1 { background: #fff; }
+
+.main .article_l .pptj ul { border-left: 1px solid #e6e6e6; }
+
+.main .article_l .pptj ul li { float: left; width: 81px; height: 36px; padding: 6px; border-right: 1px solid #e6e6e6; border-bottom: 1px solid #e6e6e6; }
+
+.main .article_l .pptj ul li img { width: 80px; height: 36px; }
 
 .main .article_r { margin-left: 20px; float: left; width: 980px; }
 
